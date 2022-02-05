@@ -74,3 +74,17 @@ function sum($a, $b)
 ```
 
 Okay, vậy là mọi thứ đã an toàn!
+
+## ArrayShape
+
+Psalm còn hỗ trợ chúng ta kiểm tra dữ liệu trong mảng:
+
+```php
+/**
+ * @param array{name: string} $a
+ */
+function showInt(array $a): int
+{
+    return $a['name'] + 1; // Sẽ báo lỗi vì $a['name'] là string
+}
+```
