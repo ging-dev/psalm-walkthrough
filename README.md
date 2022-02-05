@@ -10,3 +10,17 @@ Và Psalm đã được ra đời với các chức năng:
 - Đảm bảo chất lượng code trong một team lớn
 - Đảm bảo không có lỗi nào liên quan đến kiểu dữ liệu khi chạy
 - Cung cấp công cụ tự động fix một số lỗi thông thường
+
+## Cài đặt Psalm trên vscode
+
+Trước tiên, hãy tìm psalm trong extensions của Visual Studio Code và cài đặt nó:
+
+![](https://imgur.com/gd8ZKXt.png)
+
+Extension này cung cấp language server giữa psalm và vscode.
+
+Cài đặt psalm trong dự án của bạn thông qua `composer`:
+
+```bash
+composer require --dev vimeo/psalm
+```
