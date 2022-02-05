@@ -24,3 +24,32 @@ Cài đặt psalm trong dự án của bạn thông qua `composer`:
 ```bash
 composer require --dev vimeo/psalm
 ```
+
+Chạy lệnh:
+
+```bash
+./vendor/bin/psalm --init
+```
+
+Psalm sẽ scan tất cả các file trong dự án của bạn và tạo ra một file `psalm.xml`.
+
+## Sử dụng
+
+Ở đây mình tạo 1 file `example.php` có nội dung như sau:
+
+```php
+<?php
+
+declare(strict_types=1);
+
+function sum($a, $b)
+{
+    return $a + $b;
+}
+```
+
+Đây là hàm tính tổng 2 hai biến `$a` và `$b`, nhìn thì có vẻ không có nó lỗi gì nhưng Psalm sẽ phát hiện ra lỗi tiềm ẩn trong đoạn mã của bạn:
+
+![](https://imgur.com/wPLsOU7.png)
+
+Nó cho thấy rằng chúng ta chưa cung cấp `docblock` về kiểu dữ liệu cho `$a` và `$b` cũng như kiểu dữ liệu trả về của hàm `sum()`.
