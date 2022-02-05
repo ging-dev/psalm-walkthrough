@@ -53,3 +53,24 @@ function sum($a, $b)
 ![](https://imgur.com/wPLsOU7.png)
 
 Nó cho thấy rằng chúng ta chưa cung cấp `docblock` về kiểu dữ liệu cho `$a` và `$b` cũng như kiểu dữ liệu trả về của hàm `sum()`.
+
+Giờ hãy thử fix nó:
+
+```php
+<?php
+
+declare(strict_types=1);
+
+/**
+ * @param float|int $a
+ * @param float|int $b
+ *
+ * @return float|int
+ */
+function sum($a, $b)
+{
+    return $a + $b;
+}
+```
+
+Okay, vậy là mọi thứ đã an toàn!
