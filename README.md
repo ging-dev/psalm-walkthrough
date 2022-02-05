@@ -88,3 +88,40 @@ function showInt(array $a): int
     return $a['name'] + 1; // Sẽ báo lỗi vì $a['name'] là string
 }
 ```
+
+## Generics
+
+```php
+/**
+ * @template T
+ */
+class Data
+{
+    /**
+     * @var T
+     */
+    private $data;
+
+    /**
+     * @param T $data
+     */
+    public function __construct($data)
+    {
+        $this->data = $data;
+    }
+
+    /**
+     * @return T
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
+}
+
+/** @var Data<stdClass> */
+$data = new Data(new stdClass());
+
+// Sẽ báo lỗi vì $data->getData() trả về stdClass, bạn không thể echo nó
+echo $data->getData();
+```
